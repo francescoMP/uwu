@@ -1,54 +1,101 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chatbot Asistente Virtual</title>
-  <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #F4F6F8;
-    }
-    
-    h1 {
-      color: #333;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camanchaca - Asistente Virtual</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #0077b6, #90e0ef);
+            color: #333;
+        }
 
-    df-messenger {
-      z-index: 999;
-      position: fixed;
-      --df-messenger-font-color: #000;
-      --df-messenger-font-family: Arial;
-      --df-messenger-chat-background: #A2CADF;
-      --df-messenger-message-user-background: #FFFFFF;
-      --df-messenger-message-bot-background: #fff;
-      bottom: 16px;
-      right: 16px;
-    }
-  </style>
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .instructions {
+            background: rgba(255, 255, 255, 0.9);
+            color: #0077b6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .instructions p {
+            margin: 10px 0;
+        }
+
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #f0f8ff;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Bienvenido al Asistente Virtual de Camanchaca</h1>
+        <p>
+            Explora la información pública de nuestra empresa fácilmente con nuestro chatbot. 
+            Sigue las instrucciones a continuación para comenzar.
+        </p>
+        
+        <div class="instructions">
+            <h2>¿Cómo usar el chatbot?</h2>
+            <p>1. Haz clic en el icono del chatbot en la esquina inferior derecha de esta página.</p>
+            <p>2. Pregúntale cualquier información pública sobre Camanchaca.</p>
+            <p>3. Recibe respuestas rápidas y precisas en tiempo real.</p>
+        </div>
+    </div>
 
-  <h1>Bienvenido al Asistente Virtual de Camanchaca</h1>
-  
-  <!-- Chatbot de Dialogflow -->
-  <df-messenger
-    project-id="presentacionchatbot"
-    agent-id="930ecf76-67e4-4852-bc3c-34748e262525"
-    language-code="es"
-    max-query-length="-1">
-    <df-messenger-chat-bubble chat-title="Asistente Virtual">
-    </df-messenger-chat-bubble>
-  </df-messenger>
-  
-  <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <!-- Chatbot Code -->
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <df-messenger
+        project-id="presentacionchatbot"
+        agent-id="930ecf76-67e4-4852-bc3c-34748e262525"
+        language-code="es"
+        max-query-length="-1">
+        <df-messenger-chat-bubble
+         chat-title="Asistente Virtual">
+        </df-messenger-chat-bubble>
+    </df-messenger>
+    <style>
+      df-messenger {
+        z-index: 999;
+        position: fixed;
+        --df-messenger-font-color: #000;
+        --df-messenger-font-family: Arial;
+        --df-messenger-chat-background: #A2CADF;
+        --df-messenger-message-user-background: #FFFFFF;
+        --df-messenger-message-bot-background: #fff;
+        bottom: 16px;
+        right: 16px;
+      }
+    </style>
 
+    <footer>
+        &copy; 2024 Camanchaca. Todos los derechos reservados.
+    </footer>
 </body>
 </html>
+
